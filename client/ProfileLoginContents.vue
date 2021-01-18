@@ -52,6 +52,13 @@
     line-height: 98px;
     text-align: center;
   }
+  .asp-hint {
+    margin-top: 10px;
+    padding-left: 20px;
+    font-size: 12px;
+    line-height: 18px;
+    color: @font-darken-color;
+  }
   .duration-button {
     position: relative;
     margin-bottom: 20px;
@@ -120,7 +127,8 @@
         img.avatar(v-if="me.avatar", :src="me.avatar")
         p.empty-avatar(v-else) {{ firstCharacter }}
     section.section
-      asp-card(:point="aspBalance")
+      asp-card(:point="aspBalance", :me="me")
+      p.asp-hint 어셈블 계정을 연결하고, 어셈블 포인트를 현금화하세요.
     section.section(v-if="me.isMD")
       basic-section-title 매트릭
       button.duration-button(@click="openDuration") {{ durationButtonText }}
